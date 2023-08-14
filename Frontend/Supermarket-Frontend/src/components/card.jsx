@@ -5,8 +5,7 @@ const card = (props) => {
     <div>
       <div>
         <div>
-          <img src={props.img} style={{width: '299.333px',
-height: '363px'}}/>
+          <img src={props.img} style={{width: '299.333px',height: '363px'}}/>
         </div>
         <div>
           <p className='text-center mt-3' style={{color: 'var(--color-2, #1E1E1E)',fontFamily: 'Poppins',fontSize: '18px',fontStyle: 'normal',fontWeight: '500',lineHeight: 'normal'}}>{props.title}</p>

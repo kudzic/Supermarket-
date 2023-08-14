@@ -71,7 +71,7 @@ const landingpagelogo = () => {
             </div>
             <div className='px-10 mt-32 mb-32 ' >
               <div className='flex'>
-                <diV>
+                <div>
 
                 <p style={{width:'256px',color:'#1E1E1E',fontFamily:'Poppins',fontSize:'32px',fontStyle:'normal',fontWeight:'700',lineHeight:'normal',marginBottom:'24px'}}>Best Selling Products</p>
                   <p style={{width:'196px',fontFamily:'Poppins',fontSize:'18px',fontStyle:'normal',fontWeight:'500',lineHeight:'normal'}}>Experience the difference. Our devices offer superior sound quality, picture quality, and performance.</p>
@@ -81,7 +81,7 @@ const landingpagelogo = () => {
                   </button>
                   <img src={Arrow} className='absolute top-10' style={{left:'130px'}}/>
                   </div>
-                </diV>
+                </div>
   
                    <div className='flex gap-9'>
                     {data}
