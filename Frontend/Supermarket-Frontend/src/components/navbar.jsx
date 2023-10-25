@@ -13,6 +13,7 @@ const navbar = () => {
         <p style={{fontFamily:'Poppins',fontSize:'18px',fontWeight:'500',fontStyle:'normal',lineHeight:'normal',color:'#1E1E1E'}}><Link to={'/'}>Home</Link></p>
         <p style={{fontFamily:'Poppins',fontSize:'18px',fontWeight:'500',fontStyle:'normal',lineHeight:'normal',color:'#1E1E1E'}}><Link to={'/products'}>Products</Link></p>
         <p style={{fontFamily:'Poppins',fontSize:'18px',fontWeight:'500',fontStyle:'normal',lineHeight:'normal',color:'#1E1E1E'}}><Link to='/contact'>Contacts</Link></p>
+        <p style={{fontFamily:'Poppins',fontSize:'18px',fontWeight:'500',fontStyle:'normal',lineHeight:'normal',color:'#1E1E1E'}}><Link to='/dashboard'>Dashboard</Link></p>
         </div>
         
         <div className='my-7 flex flex-row gap-10' style={{marginLeft:'auto',marginRight:'40px'}}>
