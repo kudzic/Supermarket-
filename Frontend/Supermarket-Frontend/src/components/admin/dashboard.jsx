@@ -6,7 +6,7 @@ import Inbox from '../../images/inbox.png'
 import Sales from '../../images/sell.png'
 import Orders from '../../images/Orders.png'
 import Analytics from '../../images/data_usage.png'
-import InboxPage from '../admin/inbox'
+import IncomingPage from '../admin/inbox'
 import OrdersPage from '../admin/orders'
 import SalesPage from '../admin/sales'
 import AnalyticsPage from '../admin/analytics'
@@ -20,16 +20,38 @@ import orders from './orders';
 const dashboard = () => {
 
   const [order,setOrder]=useState(false)
-  
+  const [sales,setSales]=useState(false)
+  const [analytics,setAnalytics]=useState(false)
+  const [incoming,setIncoming]=useState(false)
   
   function setOrderPage(){
-       setOrder(e=>!e)
-       
-       
-      
-
+       setOrder(true)
+       setAnalytics(false)
+       setSales(false)
+       setIncoming(false)
        console.log(order);
    }
+   function setSalesPage(){
+    setSales(true)
+    setOrder(false)
+    setAnalytics(false)
+    setIncoming(false)
+    console.log(order);
+}
+function setAnalyticsPage(){
+  setAnalytics(true)
+  setOrder(false)
+  setSales(false)
+  setIncoming(false)
+  console.log(order);
+}
+function setIncomingPage(){
+  setIncoming(true)
+  setOrder(false)
+  setAnalytics(false)
+  setSales(false)
+  console.log(order);
+}
 
 
   return (
@@ -65,7 +87,7 @@ const dashboard = () => {
             <div>
               <span className='flex gap-5 px-7 pb-10 '>
                 <img src={Inbox}/>
-                <button>Incoming Orders</button>
+                <button onClick={setIncomingPage}>Incoming Orders</button>
               </span>
             </div>
             <div>
@@ -77,13 +99,13 @@ const dashboard = () => {
             <div>
               <span className='flex gap-5 px-7 pb-10'>
                 <img src={Sales}/>
-                <button>Sales</button>
+                <button onClick={setSalesPage}>Sales</button>
               </span>
             </div>
             <div>
               <span className='flex gap-5 px-7 pb-10  '>
                 <img src={Analytics}/>
-                <button>Analytics</button>
+                <button onClick={setAnalyticsPage}>Analytics</button>
               </span>
             </div>
             
@@ -91,7 +113,7 @@ const dashboard = () => {
 
           </div> </div>
           <div id='gray-space'>
-           {order && <OrderPage/>}
+           {order && <OrdersPage/> || incoming && <IncomingPage/> || sales && <SalesPage/> || analytics && <AnalyticsPage/>}
           </div>
 
       </div>
