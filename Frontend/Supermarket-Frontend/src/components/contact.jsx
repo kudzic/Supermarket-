@@ -39,11 +39,11 @@ Please feel free to reach out to our dedicated customer support team using the f
       </div>
       <div className='flex flex-col mb-8'>
        <label>Message:</label>
-       <input  type='text'  style={{background:'#F7F7F7',height:'200px'}}/>
+       <input  type='text'  style={{background:'#F7F7F7',height:'200px',textAlign:'left',verticalAlign:'top'}}/>
       </div>
 
-      <div >
-        <button type='submit' className=' pl-32 pr-32 pt-2 pb-2   ' style={{background:'#000',color:'#FFFFFF',textAlign:'center'}}>Submit</button>
+      <div className='w-full' >
+        <button type='submit' className=' pl-36 pr-36 pt-2 pb-2' style={{background:'#000',color:'#FFFFFF',textAlign:'center'}}>Submit</button>
       </div>
 
 
