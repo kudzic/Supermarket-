@@ -8,7 +8,8 @@ const sales = () => {
       name:'Customer Name',
       selector: row => row.Customer,
       width:'fit-content',
-      text:'center'
+      text:'center',
+      
     },
     {
       name:"Product ID",
@@ -43,7 +44,12 @@ const sales = () => {
   ]
   return (
     <div>
-      <DataTable columns={columns} data={data}/>
+      <DataTable
+       columns={columns} 
+       data={data}
+       pagination
+       selectableRows
+      />
     </div>
   )
 }

@@ -2,28 +2,53 @@ import React from 'react'
 
 const contact = () => {
   return (
-    <div>
-      <div>
-      <div>
-        <p>Get in Touch</p>
+    <div className='flex ' >
+      < div style={{width:'30%',margin:'10%'}}>
+        <span style={{color:'#000',fontFamily:'Poppins',fontSize:'44px',width:'40%',fontWeight:'800' ,lineHeight:'64px'}}>Let's Talk</span>
+        <p style={{marginTop:'40px'}}>We are committed to providing exceptional service and support to our valued customers. Whether you have questions about our products, need assistance with an order, or want to share feedback, we are here to help.
+Please feel free to reach out to our dedicated customer support team using the following methods:</p>
+      
+      <div className='flex flex-col mt-9 mb-9'>
+        <span style={{color:'#000',fontFamily:'Poppins',fontSize:'24px',width:'40%',fontWeight:'800' ,lineHeight:'64px'}}>Email:</span>
+        <span>eTechSupport@gmail.com</span>
       </div>
-      <div>
-        <form>
-          <label for='name'>Name</label>
-          <input type='text' placeholder='Name' name='name' id='name'/>
-          <label for='email'>Email</label>
-          <input type='text' placeholder='Email' name='email' id='email'/>
-          <label for='name'>Name</label>
-          <input type='text' placeholder='Phone number' name='phone'/>
-          <select >
-          <option value=''>How did you find us?</option>
-             <option value='Internet'>Internet</option>
-             <option value='Family'>Friend/Family</option>
-             <option value='other'>Other</option>
-          </select>
-        </form>
+     
+     <div className='flex flex-col '>
+      <span style={{color:'#000',fontFamily:'Poppins',fontSize:'24px',width:'40%',fontWeight:'800' ,lineHeight:'64px'}}>Socials:</span>
+      <span className='mb-3'>
+        <a href='http://instagram.com'>Instagram</a></span>
+      
+      <span className='mb-3'>
+       <a href='http://facebook.com'>Facebook</a>
+      </span>
+      <span>
+        <a href='href=://twitter.com'>Twitter</a>
+      </span>
       </div>
       </div>
+      <div className=' my-24 w-1/3'>
+
+     
+      <div className='flex flex-col mb-8'>
+       <label>Name:</label>
+       <input  type='text'  style={{background:'#F7F7F7',height:'46px'}}/>
+      </div>
+      <div className='flex flex-col mb-8'>
+       <label>Email:</label>
+       <input  type='text' placeholder='' style={{background:'#F7F7F7',height:'46px'}}/>
+      </div>
+      <div className='flex flex-col mb-8'>
+       <label>Message:</label>
+       <input  type='text'  style={{background:'#F7F7F7',height:'200px'}}/>
+      </div>
+
+      <div >
+        <button type='submit' className=' pl-32 pr-32 pt-2 pb-2   ' style={{background:'#000',color:'#FFFFFF',textAlign:'center'}}>Submit</button>
+      </div>
+
+
+      </div>
+
     </div>
   )
 }

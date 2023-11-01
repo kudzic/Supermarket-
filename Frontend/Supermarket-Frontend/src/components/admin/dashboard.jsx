@@ -6,7 +6,7 @@ import Inbox from '../../images/inbox.png'
 import Sales from '../../images/sell.png'
 import Orders from '../../images/Orders.png'
 import Analytics from '../../images/data_usage.png'
-import IncomingPage from '../admin/inbox'
+import InboxPage from '../admin/inbox'
 import OrdersPage from '../admin/orders'
 import SalesPage from '../admin/sales'
 import AnalyticsPage from '../admin/analytics'
@@ -22,7 +22,7 @@ const dashboard = () => {
   const [order,setOrder]=useState(false)
   const [sales,setSales]=useState(false)
   const [analytics,setAnalytics]=useState(false)
-  const [incoming,setIncoming]=useState(false)
+  const [incoming,setIncoming]=useState(true)
   
   function setOrderPage(){
        setOrder(true)
@@ -87,7 +87,7 @@ function setIncomingPage(){
             <div>
               <span className='flex gap-5 px-7 pb-10 '>
                 <img src={Inbox}/>
-                <button onClick={setIncomingPage}>Incoming Orders</button>
+                <button onClick={setIncomingPage}>Inbox</button>
               </span>
             </div>
             <div>
@@ -113,7 +113,7 @@ function setIncomingPage(){
 
           </div> </div>
           <div id='gray-space'>
-           {order && <OrdersPage/> || incoming && <IncomingPage/> || sales && <SalesPage/> || analytics && <AnalyticsPage/>}
+           {order && <OrdersPage/> || incoming && <InboxPage/> || sales && <SalesPage/> || analytics && <AnalyticsPage/>}
           </div>
 
       </div>

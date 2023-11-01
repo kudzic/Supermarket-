@@ -108,9 +108,9 @@ const landingpagelogo = () => {
                <p style={{color: 'rgba(30, 30, 30, 0.50)',textAlign: 'center',fontFamily: 'Poppins',fontSize: '18px',fontStyle: 'normal',fontWeight: '500',lineHeight: 'normal'
                }} className=' text-center'>we offer many different types of products with many variations in each category.</p>
               </div>
-              <div className='relative ' style={{width:'400px',marginLeft:'36px',marginTop:'48px'}}>
+              <div  style={{width:'400px',marginLeft:'36px',marginTop:'48px',position:'relative'}}>
                 <img src={Ellipse1}  className='mx-auto'/>
-                <img src={Telephone} className='absolute top-7  'style={{left:'175px'}}/>
+                <img src={Telephone} style={{left:'175px',position:"absolute"}}/>
                 <p style={{color: '#000',fontFamily: 'Poppins',fontSize: '18px',fontStyle: 'normal',fontWeight: '700',lineHeight: 'normal'}} className='text-center'>24/7 Support</p>
                 <p style={{color: 'rgba(30, 30, 30, 0.50)',textAlign: 'center',fontFamily: 'Poppins',fontSize: '18px',fontStyle: 'normal',fontWeight: '500',lineHeight: 'normal'
                }} className=' text-center'>answers to any business related inquiry 24/7 and in real-time.</p>
