@@ -19,7 +19,7 @@ const columns=[
     name:'Date',
     selector:row => row.Date,
     sortable:true,
-    text:'center'
+  
   },
   {
     name:'Customer Name',

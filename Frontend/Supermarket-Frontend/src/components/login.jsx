@@ -31,6 +31,14 @@ const Login = () => {
       password: password,
     };
 
+
+    function isTokenExpired(token,expiration){
+      if(!token) return true;
+      const expirationTime=new Date(0);
+      expirationTime.setMilliseconds(expiration)
+      return expirationTime < new Date();
+    }
+
     try {
       const response = await fetch('http://localhost:8081/api/v1/auth/login', {
         method: 'POST',
@@ -43,8 +51,12 @@ const Login = () => {
 
       if (response.ok) {
         const content = await response.json();
+        sessionStorage.setItem('JWT',content.token)
         setJwt(content.token);
-        localStorage.setItem('JWT',content.token)
+        const jjwt=content.token
+        const claims=atob(jjwt.split('.')[1])
+        const exp=claims.exp
+        console.log(exp);
         return jwt
         
       } else {
@@ -56,12 +68,7 @@ const Login = () => {
   };
 
   
-    useEffect(()=>{
-      const storedJwt=localStorage.getItem('JWT')
-      if(storedJwt){
-        navigate('/')
-      }
-    },[])
+ 
   
   return (
     <div>

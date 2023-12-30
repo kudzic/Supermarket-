@@ -2,7 +2,7 @@ import React from 'react'
 
 const card = (props) => {
   return (
-    <div>
+    <div >
       <div>
         <div>
           <img src={props.img} style={{width: '299.333px',height: '363px'}}/>

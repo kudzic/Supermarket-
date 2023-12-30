@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Loginlogo from '../images/loginlogo.png'
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 
 
-const signup = () => {
+const Signup = () => {
   const[jwt,setJwt]=useState('')
   const[firstName,setFirstName]=useState('')
   const[lastName,setLastName]=useState('')
   const[password,setPassword]=useState('')
   const[email,setEmail]=useState('')
-  const [confirmPassword,setConfirmPassword]=useState('')
+  //const [confirmPassword,setConfirmPassword]=useState('')
   
 
 
@@ -93,4 +93,4 @@ const signup = () => {
   )
 }
 
-export default signup;
+export default Signup;

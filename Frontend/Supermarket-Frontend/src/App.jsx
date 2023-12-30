@@ -9,13 +9,13 @@ import Contact from './components/contact';
 import Signup from './components/signup';
 import Dashboard from './components/admin/dashboard'
 
+
 const App = () => {
   return (
     <div>
       
       <Navbar  className='sticky top-0 bg-white z-10'/>
-          <Routes>
-           
+          <Routes> 
             <Route path='/' element={<Landingpagelogo  className='z-0'/>}/>
             <Route path='/products' element={<Products/>}/>
             <Route path='/login' element={<Login/>}/>

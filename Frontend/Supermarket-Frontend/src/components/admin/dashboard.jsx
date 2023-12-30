@@ -17,7 +17,7 @@ import orders from './orders';
 
 
 
-const dashboard = () => {
+const Dashboard = () => {
 
   const [order,setOrder]=useState(false)
   const [sales,setSales]=useState(false)
@@ -123,4 +123,4 @@ function setIncomingPage(){
   )
 }
 
-export default dashboard  
+export default Dashboard  

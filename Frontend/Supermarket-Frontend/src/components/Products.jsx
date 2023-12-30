@@ -5,21 +5,35 @@ import { useState,useEffect } from 'react';
 
  const Products = () => {
   const [data,setData]=useState([])
+ 
+  const [page,setPage]=useState()
 
   useEffect( () => {
-      axios.get('http://localhost:8080/api/v1/product/products')
+      axios.get('http://localhost:8081/api/v1/product/pagedproducts?pageNumber=1')
       .then(response => {
-        
        setData(response.data)
-      
       }).catch(err => {console.log("Error Occured")})
   },[data.length])
 
   console.log(data)
+
+   
+
   
+ useEffect(()=> {
+  axios.get('http://localhost:8081/api/v1/product/products')
+  .then(response =>{
+    setPage(response.data.length)
+  })
+  .catch(err => {console.log("Error Ocurred")})
+ },[setPage])
+
+  console.log(Math.round(page/15));
+   console.log(page);
+
   const output = data.map(item=>{
-    return(
-      <ProductCard
+    return( 
+      <ProductCard 
       key={item.id}
       title={item.name}
       img={item.image}
@@ -33,7 +47,7 @@ import { useState,useEffect } from 'react';
 
   return (
     <div>
-       <div className='mx-7 mt-7  flex gap-20 '>
+       <div className='mx-7 mt-7 mb-6 flex gap-20 '>
         <div className=' w-56'>
           <div className='border-b-2 mb-3 flex flex-col gap-2'>
             <span style={{color: 'var(--a, #003F62)',fontFamily: 'Poppins',fontSize: '16.09px',fontStyle: 'normal',fontWeight: '500',lineHeight: 'normal'}}>Categories</span>
@@ -64,8 +78,12 @@ import { useState,useEffect } from 'react';
      <div className='flex flex-wrap gap-4 ' style={{justifyContent: 'center',gap: '26.556px'}}>
       {output}
       </div>
+     
     </div>
-    
+       <div className='flex gap-3' style={{margin:"auto",justifyContent:"center",textAlign:'center'}}>
+        <button className='border rounded-md p-1'>1</button>
+        
+       </div>
     </div>
   )
 }
