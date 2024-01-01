@@ -2,22 +2,37 @@ import React from 'react'
 import ProductCard from './productCard';
 import axios from 'axios'
 import { useState,useEffect } from 'react';
+import { Link ,useParams} from 'react-router-dom';
 
  const Products = () => {
   const [data,setData]=useState([])
- 
+  const [pagecount,setPageCount]=useState(1)
   const [page,setPage]=useState()
-
+  sessionStorage.setItem('PageCount',pagecount)
   useEffect( () => {
-      axios.get('http://localhost:8081/api/v1/product/pagedproducts?pageNumber=1')
+      axios.get(`http://localhost:8081/api/v1/product/pagedproducts?pageNumber=${pagecount}`)
       .then(response => {
        setData(response.data)
       }).catch(err => {console.log("Error Occured")})
-  },[data.length])
+  },[pagecount])
 
   console.log(data)
 
-   
+  const next=() =>{
+    if(pagecount <= Math.round(page/15))
+    {
+      setPageCount(pagecount+1)
+     
+    }
+    sessionStorage.setItem('PageCount',pagecount+1)
+  }
+
+  const previous=() =>{
+    if(pagecount >1){
+    setPageCount(pagecount-1)
+    }
+    sessionStorage.setItem('PageCount',pagecount-1)
+  }
 
   
  useEffect(()=> {
@@ -33,14 +48,19 @@ import { useState,useEffect } from 'react';
 
   const output = data.map(item=>{
     return( 
-      <ProductCard 
+      <Link to={`/products/${item.id}`}>
+     <ProductCard 
       key={item.id}
       title={item.name}
       img={item.image}
       price={item.price}
       />
+      </Link>
+   
     )
   })
+  console.log(useParams());
+  console.log(pagecount);
 
  
   
@@ -76,13 +96,14 @@ import { useState,useEffect } from 'react';
       
        </div>
      <div className='flex flex-wrap gap-4 ' style={{justifyContent: 'center',gap: '26.556px'}}>
-      {output}
+     {output}
       </div>
      
     </div>
-       <div className='flex gap-3' style={{margin:"auto",justifyContent:"center",textAlign:'center'}}>
-        <button className='border rounded-md p-1'>1</button>
-        
+       <div className='flex gap-3 mb-6 ' style={{justifyContent:"center",textAlign:'center'}}>
+        <button className='border rounded-md p-2 hover:bg-gray-300' style={{width:'100px'}} onClick={previous}>Previous</button>
+        <p className='my-auto px-3'>{pagecount}</p> 
+        <button className='border rounded-md p-2 hover:bg-gray-300' style={{width:'100px'}} onClick={next}>Next</button>
        </div>
     </div>
   )
